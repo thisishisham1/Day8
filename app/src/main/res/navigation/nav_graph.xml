@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listProductFragment">
+
+    <fragment
+        android:id="@+id/listProductFragment"
+        android:name="klivvr.test.day8.presentation.productListScreen.ListProductFragment"
+        android:label="fragment_list_product"
+        tools:layout="@layout/fragment_list_product">
+        <action
+            android:id="@+id/action_listProductFragment_to_horizontalImageFragment"
+            app:destination="@id/horizontalImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/horizontalImageFragment"
+        android:name="klivvr.test.day8.presentation.fragmentTwo.HorizontalImageFragment"
+        android:label="fragment_horizontal_image"
+        tools:layout="@layout/fragment_horizontal_image">
+        <argument
+            android:name="imageUrls"
+            app:argType="string[]" />
+    </fragment>
+</navigation>
