@@ -1,6 +1,5 @@
-package klivvr.test.day8.data.retrofit
+package klivvr.test.day8.data.remoteDataSource.retrofit
 
-import klivvr.test.day8.data.ProductsService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

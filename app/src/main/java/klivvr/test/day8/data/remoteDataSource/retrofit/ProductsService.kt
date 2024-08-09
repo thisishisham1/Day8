@@ -1,7 +1,7 @@
-package klivvr.test.day8.data
+package klivvr.test.day8.data.remoteDataSource.retrofit
 
 import klivvr.test.day8.data.models.Product
-import klivvr.test.day8.data.retrofit.responseModel.ProductsListResponse
+import klivvr.test.day8.data.remoteDataSource.retrofit.responseModel.ProductsListResponse
 import retrofit2.http.GET
 
 interface ProductsService {

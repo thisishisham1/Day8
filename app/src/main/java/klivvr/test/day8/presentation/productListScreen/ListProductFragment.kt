@@ -9,10 +9,18 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import klivvr.test.day8.R
+import klivvr.test.day8.data.remoteDataSource.retrofit.RetrofitService
+import klivvr.test.day8.data.remoteDataSource.source.RemoteDataSourceImpl
+import klivvr.test.day8.data.repository.Repository
 import klivvr.test.day8.viewModel.MainViewModel
+import klivvr.test.day8.viewModel.MainViewModelFactory
 
 class ListProductFragment : Fragment() {
-    val vm: MainViewModel by viewModels()
+    private val repository = Repository(RemoteDataSourceImpl(RetrofitService.service))
+
+    private val vm: MainViewModel by viewModels (
+        factoryProducer = { MainViewModelFactory(repository) }
+    )
     private lateinit var recyclerView: RecyclerView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

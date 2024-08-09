@@ -5,9 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import klivvr.test.day8.R
+import klivvr.test.day8.data.remoteDataSource.retrofit.RetrofitService
+import klivvr.test.day8.data.remoteDataSource.source.RemoteDataSourceImpl
+import klivvr.test.day8.data.repository.Repository
+import klivvr.test.day8.viewModel.MainViewModel
+import klivvr.test.day8.viewModel.MainViewModelFactory
 
 
 class HorizontalImageFragment : Fragment() {

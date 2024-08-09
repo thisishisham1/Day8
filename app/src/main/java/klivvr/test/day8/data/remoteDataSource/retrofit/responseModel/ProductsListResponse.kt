@@ -1,4 +1,4 @@
-package klivvr.test.day8.data.retrofit.responseModel
+package klivvr.test.day8.data.remoteDataSource.retrofit.responseModel
 
 import com.google.gson.annotations.SerializedName
 import klivvr.test.day8.data.models.Product

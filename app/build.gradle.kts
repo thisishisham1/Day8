@@ -2,16 +2,16 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.navigation.safe.args)
-    id("com.google.devtools.ksp")
-
+    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "klivvr.test.day8"
+    namespace =
+        "klivvr.test.day8" // Consider a more descriptive package name, e.g., com.yourcompany.yourapp
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "klivvr.test.day8"
+        applicationId = "klivvr.test.day8" // Should match the namespace
         minSdk = 27
         targetSdk = 34
         versionCode = 1
@@ -22,7 +22,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true // Enable minification for release builds to reduce app size
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -49,27 +49,23 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    // Glide for image loading
+    // Image loading
     implementation(libs.bumptech.glide)
 
-    // Retrofit for network requests
+    // Networking
     implementation(libs.square.retrofit)
-
-    // Gson converter for Retrofit
     implementation(libs.square.converter.gson)
-
-    // OkHttp for network requests
     implementation(libs.okhttp3)
-    implementation(libs.okhttp3.interceptor)
+    implementation(libs.okhttp3.interceptor) // Consider using OkHttp's logging interceptor for debugging
 
-    // Lifecycle components
+    // Lifecycle& ViewModels
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
-    // Navigation components
+    // Navigation
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
 
-    implementation(libs.symbol.processing.api)
-
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
 }
